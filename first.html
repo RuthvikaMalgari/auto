@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Home</title></head>
+<body>
+  <h2>Currency Converter</h2>
+  <form onsubmit="convert(); return false;">
+    Name: <input type="text" id="name"><br><br>
+    Amount (INR): <input type="number" id="amt"><br><br>
+    Convert to:
+    <select id="cur">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select><br><br>
+    <input type="submit" value="Convert">
+  </form>
+
+  <script>
+    function convert() {
+      var name = document.getElementById("name").value;
+      var amt = parseFloat(document.getElementById("amt").value);
+      var cur = document.getElementById("cur").value;
+      var res = 0;
+      if(cur == "USD") res = amt * 0.012;
+      if(cur == "EUR") res = amt * 0.011;
+
+      localStorage.setItem("name", name);
+      localStorage.setItem("res", res.toFixed(2));
+      localStorage.setItem("cur", cur);
+
+      window.location.href = "result.html";
+    }
+  </script>
+</body>
+</html>
