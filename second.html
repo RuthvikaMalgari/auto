@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Result</title></head>
+<body>
+  <h3>Conversion Result</h3>
+  <p id="out"></p>
+
+  <script>
+    var name = localStorage.getItem("name");
+    var res = localStorage.getItem("res");
+    var cur = localStorage.getItem("cur");
+
+    document.getElementById("out").innerHTML = 
+      "Hello " + name + ", Converted Amount: " + res + " " + cur;
+  </script>
+</body>
+</html>
